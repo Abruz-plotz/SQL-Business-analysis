@@ -130,31 +130,7 @@ drop column complain;
 
 select * from customer_churn;
 ```
-## SQL Query Output
-
-<div style="overflow-x:auto; max-width:100%; border:1px solid #ddd; padding:10px;">
-<table>
-  <tr>
-    <th>col1</th><th>col2</th><th>col3</th><th>col4</th><th>col5</th>
-    <th>col6</th><th>col7</th><th>col8</th><th>col9</th><th>col10</th>
-    <th>col11</th><th>col12</th><th>col13</th><th>col14</th><th>col15</th>
-    <th>col16</th><th>col17</th><th>col18</th><th>col19</th><th>col20</th>
-  </tr>
-  <tr>
-    <td>val1</td><td>val2</td><td>val3</td><td>val4</td><td>val5</td>
-    <td>val6</td><td>val7</td><td>val8</td><td>val9</td><td>val10</td>
-    <td>val11</td><td>val12</td><td>val13</td><td>val14</td><td>val15</td>
-    <td>val16</td><td>val17</td><td>val18</td><td>val19</td><td>val20</td>
-  </tr>
-  <tr>
-    <td>val21</td><td>val22</td><td>val23</td><td>val24</td><td>val25</td>
-    <td>val26</td><td>val27</td><td>val28</td><td>val29</td><td>val30</td>
-    <td>val31</td><td>val32</td><td>val33</td><td>val34</td><td>val35</td>
-    <td>val36</td><td>val37</td><td>val38</td><td>val39</td><td>val40</td>
-  </tr>
-</table>
-</div>
-
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/After%20Incon%20remove.png) 
 
 
 ### Data Exploration and Analysis
