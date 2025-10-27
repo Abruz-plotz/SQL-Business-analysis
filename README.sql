@@ -1,6 +1,6 @@
 select * from customer_churn;
 
-![Result](images/First.png)
+![Result](/Screenshots for GithubSQL/First.png)
 
 set sql_safe_updates = 0;
 
