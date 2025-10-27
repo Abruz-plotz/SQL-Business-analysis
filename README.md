@@ -16,17 +16,8 @@ select * from customer_churn;
     <tr><td>North</td><td>1050</td><td>0.74</td></tr>
     <tr><td>South</td><td>1380</td><td>0.71</td></tr>
   </table>
+  <p><a href="https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv">📁 View full output (CSV)</a></p>
 </div>
-
-[📁 View full output (CSV)](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv)
-
-
-<div style="overflow-x:auto; max-height:400px;">
-</div>
-| col1 | col2 | col3 | ... |
-|------|------|------|------|
-| data | data | data | ... |
-| data | data | data | ... |
 
 ```sql
 set sql_safe_updates = 0;
