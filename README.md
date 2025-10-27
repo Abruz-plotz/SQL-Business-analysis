@@ -168,7 +168,7 @@ where churnStatus = 'Churned' and PreferredOrderCat='Laptop & Accessory'
   group by PreferredPaymentMode
   order by No_of_Customers_Used DESC limit 1;
 
-<h5> Analysis No.6 :-</h5> Total order amount hike from last year for customers who are single and prefer mobile phones for ordering.
+**Analysis No.6 :-** Total order amount hike from last year for customers who are single and prefer mobile phones for ordering.
 
 ```sql
 Select sum(OrderAmountHikeFromlastYear) as Total_Order_Amount_Hike from customer_churn
