@@ -1,6 +1,6 @@
 select * from customer_churn;
 
-![Result](Screenshots%20for%20GithubSQL/First.png)
+![Result](SQL-Business-analysis/Screenshots%20for%20GithubSQL/First.png)
 
 
 
