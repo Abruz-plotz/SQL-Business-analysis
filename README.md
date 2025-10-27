@@ -3,11 +3,11 @@
 ```sql
 select * from customer_churn;
 ```
-### Output Using Python
+#### Output Using Python
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
 
 
-### Full output link
+#### Full output link
 
 <div style="margin: 10px 0;">
   <a href="https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv" 
@@ -72,7 +72,7 @@ delete from customer_churn where WarehouseToHome > 100;
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Dist%20100+%20delete.png)
 
 
-## Dealing with Inconsistencies
+### Dealing with Inconsistencies
 
 ```sql   
    update customer_churn 
