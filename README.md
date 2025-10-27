@@ -3,8 +3,16 @@
 select * from customer_churn;
 ```
 
-
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
+
+<div style="overflow-x:auto; max-height:400px;">
+
+| col1 | col2 | col3 | ... |
+|------|------|------|------|
+| data | data | data | ... |
+| data | data | data | ... |
+
+</div>
 
 ```sql
 set sql_safe_updates = 0;
