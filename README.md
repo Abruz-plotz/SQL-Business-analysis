@@ -6,7 +6,7 @@ select * from customer_churn;
 
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
 
-
+```sql
 set sql_safe_updates = 0;
 
 update customer_churn
@@ -47,11 +47,18 @@ set OrderCount = (select OrderCount from
 OrderCount order by value_occurrence desc limit 1) as mode_OrderCount)
 where OrderCount is null;
 
- Select * from customer_churn where WarehouseToHome > 100;
+
+
+
+Select * from customer_churn where WarehouseToHome > 100;
 delete from customer_churn where WarehouseToHome > 100;
+```
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Dist%20100+%20delete.png)
+
 
 -- Dealing with Inconsistencies
-   
+
+```sql   
    update customer_churn 
    set PreferredPaymentMode = case
    when PreferredPaymentMode = 'cc' then 'Credit Card'
@@ -68,7 +75,9 @@ delete from customer_churn where WarehouseToHome > 100;
    end;
    
 Select * from customer_churn;
-   
+```
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/After%20Incon%20remove.png)   
+
 -- Data Transformation: 
 -- Column Renaming and Creating New Columns
 
