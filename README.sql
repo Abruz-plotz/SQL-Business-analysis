@@ -1,6 +1,6 @@
 select * from customer_churn;
 
-https://github.com/<username>/Abruz-plotz/raw/main/SQL-Business-analysis/Screenshots%20for%20GithubSQL/First.png
+https://github.com/Abruz-plotz/raw/main/SQL-Business-analysis/Screenshots%20for%20GithubSQL/First.png
 
 
 set sql_safe_updates = 0;
