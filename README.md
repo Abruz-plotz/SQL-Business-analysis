@@ -167,13 +167,24 @@ where churnStatus = 'Churned' and PreferredOrderCat='Laptop & Accessory'
   where churnStatus = 'Active'
   group by PreferredPaymentMode
   order by No_of_Customers_Used DESC limit 1;
-  
-  Select sum(OrderAmountHikeFromlastYear) as Total_Order_Amount_Hike from customer_churn
-  where MaritalStatus='Single' and PreferredOrderCat='Mobile Phone';
-  
-  Select avg(NumberOfDeviceRegistered) from customer_churn
-  where PreferredPaymentMode = 'UPI';
-  
+
+##### Analysis No:- 6
+
+       Total order amount hike from last year for customers who are single
+and prefer mobile phones for ordering.
+
+```sql
+Select sum(OrderAmountHikeFromlastYear) as Total_Order_Amount_Hike from customer_churn
+where MaritalStatus='Single' and PreferredOrderCat='Mobile Phone';
+```
+![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/Ans_6.png)
+
+##### Analysis No:- 7
+
+```sql  
+Select avg(NumberOfDeviceRegistered) from customer_churn
+where PreferredPaymentMode = 'UPI';
+```  
   Select CityTier,
     COUNT(CustomerID) as Customer_count from customer_churn
      GROUP BY CityTier
