@@ -1,7 +1,7 @@
 
 ```sql
 select * from customer_churn;
-
+```
 
 
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
