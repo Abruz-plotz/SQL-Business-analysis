@@ -155,18 +155,25 @@ where churnStatus = 'Churned' and ComplaintReceived = 'Yes') as DECIMAL(10, 2)) 
 (select count(*) from customer_churn
 where churnStatus = 'Churned') as Percentage_of_Churned_Customers_complained;
 ```
+**Analysis No.4 :-** City tier with the highest number of churned customers whose preferred order category is "Laptop & Accessory".
 
--- WITH CustomerCounts AS (
+```sql
   SELECT CityTier,
     COUNT(CustomerID) as Churned_Customer_count FROM customer_churn
 where churnStatus = 'Churned' and PreferredOrderCat='Laptop & Accessory'
   GROUP BY CityTier
   ORDER BY Churned_Customer_count DESC limit 1;
-  
+```
+
+
+**Analysis No.5 :-** The most preferred payment mode among active customers.
+
+```sql  
   select PreferredPaymentMode as PreferredPaymentMode_AmongActive, count(CustomerID) AS No_of_Customers_Used from customer_churn
   where churnStatus = 'Active'
   group by PreferredPaymentMode
   order by No_of_Customers_Used DESC limit 1;
+```
 
 **Analysis No.6 :-** Total order amount hike from last year for customers who are single and prefer mobile phones for ordering.
 
