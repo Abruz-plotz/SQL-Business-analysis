@@ -1,6 +1,6 @@
 # SQL Project
 
-### Dataset
+## Dataset
 
 ```sql
 select * from customer_churn;
@@ -29,6 +29,7 @@ select * from customer_churn;
 </div>
 
 ### Data Cleaning:
+
 ```sql
 set sql_safe_updates = 0;
 
@@ -73,6 +74,7 @@ where OrderCount is null;
 Select * from customer_churn where WarehouseToHome > 100;
 delete from customer_churn where WarehouseToHome > 100;
 ```
+#### Output
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Dist%20100+%20delete.png)
 
 
@@ -96,11 +98,14 @@ delete from customer_churn where WarehouseToHome > 100;
    
 Select * from customer_churn;
 ```
+#### Output
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/After%20Incon%20remove.png)   
 
--- Data Transformation: 
--- Column Renaming and Creating New Columns
 
+### Data Transformation: 
+###### Column Renaming and Creating New Columns
+
+```sql 
 alter table customer_churn
 rename column PreferedOrderCat to PreferredOrderCat,
 rename column HourSpendOnApp to HoursSpentOnApp,
@@ -124,9 +129,12 @@ drop column churn,
 drop column complain;
 
 select * from customer_churn;
+```
+
 -- Data Exploration and Analysis
 -- Question D
 
+```sql 
 select  sum(case when churnStatus = 'Churned' then 1 else 0 end) as Count_of_Churned,
 		 sum(case when churnStatus = 'Active' then 1 else 0 end) as Count_of_Active 
 from customer_churn;
@@ -134,13 +142,15 @@ from customer_churn;
 select avg(Tenure),sum(CashbackAmount) as Total_Cashback,count(CashbackAmount) as Number_of_customers
 from customer_churn
 where churnStatus = 'Churned';
+```
 
+```sql 
 Select 
 cast((Select count(*) from customer_churn
 where churnStatus = 'Churned' and ComplaintReceived = 'Yes') as DECIMAL(10, 2)) * 100 / 
 (select count(*) from customer_churn
 where churnStatus = 'Churned') as Percentage_of_Churned_Customers_complained;
-
+```
 
 -- WITH CustomerCounts AS (
   SELECT CityTier,
