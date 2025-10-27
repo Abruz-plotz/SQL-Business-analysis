@@ -1,7 +1,9 @@
 
 
-```sql
-select * from customer_churn;```
+` ```sql `
+select * from customer_churn;
+` ``` `
+
 ```markdown
 ![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/First.png)
 
