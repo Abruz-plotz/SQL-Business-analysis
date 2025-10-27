@@ -9,10 +9,6 @@ select * from customer_churn;
 
 ### Full output link
 
-<div style="overflow:auto; max-height:200px; border:1px solid #ddd; padding:10px;">
-  <p>[📁 View full output (CSV)](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv)</p>
-</div>
-
 <div style="margin: 10px 0;">
   <a href="https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv" 
      style="
@@ -27,7 +23,6 @@ select * from customer_churn;
     📁 Download Full Output (CSV)
   </a>
 </div>
-
 
 
 ```sql
@@ -71,16 +66,13 @@ set OrderCount = (select OrderCount from
 OrderCount order by value_occurrence desc limit 1) as mode_OrderCount)
 where OrderCount is null;
 
-
-
-
 Select * from customer_churn where WarehouseToHome > 100;
 delete from customer_churn where WarehouseToHome > 100;
 ```
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Dist%20100+%20delete.png)
 
 
--- Dealing with Inconsistencies
+## Dealing with Inconsistencies
 
 ```sql   
    update customer_churn 
