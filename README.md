@@ -1,12 +1,13 @@
+# SQL Project
 
 ```sql
 select * from customer_churn;
 ```
-
+### Output Using Python
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
 
 
-
+### Full output link
 
 <div style="overflow:auto; max-height:200px; border:1px solid #ddd; padding:10px;">
   <p>[📁 View full output (CSV)](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv)</p>
