@@ -5,14 +5,28 @@ select * from customer_churn;
 
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
 
-<div style="overflow-x:auto; max-height:400px;">
 
+
+
+<div style="overflow-x:auto; max-height:400px; border:1px solid #ddd; padding:10px;">
+  <table>
+    <tr><th>region</th><th>total_customers</th><th>avg_risk</th></tr>
+    <tr><td>West</td><td>1245</td><td>0.82</td></tr>
+    <tr><td>East</td><td>1120</td><td>0.79</td></tr>
+    <tr><td>North</td><td>1050</td><td>0.74</td></tr>
+    <tr><td>South</td><td>1380</td><td>0.71</td></tr>
+  </table>
+</div>
+
+[📁 View full output (CSV)](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv)
+
+
+<div style="overflow-x:auto; max-height:400px;">
+</div>
 | col1 | col2 | col3 | ... |
 |------|------|------|------|
 | data | data | data | ... |
 | data | data | data | ... |
-
-</div>
 
 ```sql
 set sql_safe_updates = 0;
