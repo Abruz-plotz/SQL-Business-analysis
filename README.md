@@ -145,6 +145,8 @@ select avg(Tenure),sum(CashbackAmount) as Total_Cashback,count(CashbackAmount) a
 from customer_churn
 where churnStatus = 'Churned';
 ```
+![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/Count.png)
+
 
 ```sql 
 Select 
