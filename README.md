@@ -13,6 +13,21 @@ select * from customer_churn;
   <p>[📁 View full output (CSV)](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv)</p>
 </div>
 
+<div style="margin: 10px 0;">
+  <a href="https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Customer_analysis_SQL.csv" 
+     style="
+       display: inline-block;
+       background-color: #4CAF50;
+       color: white;
+       padding: 10px 20px;
+       text-decoration: none;
+       border-radius: 5px;
+       font-weight: bold;
+     ">
+    📁 Download Full Output (CSV)
+  </a>
+</div>
+
 
 
 ```sql
