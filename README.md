@@ -198,7 +198,7 @@ where MaritalStatus='Single' and PreferredOrderCat='Mobile Phone';
 Select avg(NumberOfDeviceRegistered) from customer_churn
 where PreferredPaymentMode = 'UPI';
 ```  
- **Analysis No.8 :-** 
+ **Analysis No.8 :-** Determine the city tier with the highest number of customers.
 
 ```sql 
 Select CityTier,
@@ -207,7 +207,7 @@ GROUP BY CityTier
 ORDER BY Customer_count DESC limit 1;
 ```
 
-**Analysis No.9 :-**    
+**Analysis No.9 :-** Gender that utilized the highest number of coupons. 
 ```sql
 Select Gender, 
 sum(CouponUsed) as Utilized_coupon_count from customer_churn
@@ -215,37 +215,39 @@ group by Gender
 ORDER BY Utilized_coupon_count DESC limit 1;
 ``` 
  
-**Analysis No.10 :-**  
+**Analysis No.10 :-** Number of customers and the maximum hours spent on the app in each preferred order category.
 ```sql
 Select PreferredOrderCat,count(CustomerID) as No_of_Customers,
-         Sum(HoursSpentOnApp) as Max_hours_Spent from customer_churn
-          group by PreferredOrderCat
-          order by PreferredOrderCat,No_of_Customers,Max_hours_Spent;
+Sum(HoursSpentOnApp) as Max_hours_Spent from customer_churn
+group by PreferredOrderCat
+order by PreferredOrderCat,No_of_Customers,Max_hours_Spent;
 ``` 
 
-**Analysis No.11 :-**         
+**Analysis No.11 :-** Total order count for customers who prefer using credit cards and
+have the maximum satisfaction score.       
 ```sql
 Select Sum(OrderCount) as Total_Order_Count,count(OrderCount) as No_Of_Customers from customer_churn
-    where PreferredPaymentMode = 'Credit Card' 
-    and SatisfactionScore =(Select max(SatisfactionScore) from customer_churn);
+where PreferredPaymentMode = 'Credit Card' 
+and SatisfactionScore =(Select max(SatisfactionScore) from customer_churn);
  ``` 
-**Analysis No.12 :-**   
+**Analysis No.12 :-** Average satisfaction score of customers who have complained?   
  ```sql   
-	Select avg(SatisfactionScore) as Average_Satisfaction_Score
-    from customer_churn where ComplaintReceived = 'Yes';
+Select avg(SatisfactionScore) as Average_Satisfaction_Score
+from customer_churn where ComplaintReceived = 'Yes';
  ``` 
 
-**Analysis No.13 :-**  
+**Analysis No.13 :-** Most Ordered category among customers who used more than 5 coupons.
 ```sql
 Select CustomerID,PreferredOrderCat,CouponUsed from  customer_churn
-    where CouponUsed > 5; 
+where CouponUsed > 5; 
 ```
 
-**Analysis No.14 :-** 
+**Analysis No.14 :-** Top 3 preferred order categories with the highest average cashback amount.
+
 ```sql
 Select PreferredOrderCat as Top_3_category,(select avg(CashbackAmount)) as Average_Cashback from customer_churn
-  group by PreferredOrderCat
-  order by Average_Cashback DESC limit 3;
+group by PreferredOrderCat
+ order by Average_Cashback DESC limit 3;
  ``` 
  /* select CustomerID from customer_churn
   group by CustomerID
@@ -253,16 +255,17 @@ Select PreferredOrderCat as Top_3_category,(select avg(CashbackAmount)) as Avera
   
   
  
-**Analysis No.15 :-**   
+**Analysis No.15 :-** The preferred payment modes of customers under some condition  
+ 
  ```sql
  Select PreferredPaymentMode
-        from customer_churn
-  group by  PreferredPaymentMode
-    having avg(Tenure) > 10
+ from customer_churn
+ group by  PreferredPaymentMode
+ having avg(Tenure) > 10
 	   and sum(OrderCount) > 500;        
  ```
   
-**Analysis No.16 :-**   
+**Analysis No.16 :-**  Categorize customers based on their distance
 ```sql
 Select  CustomerID,WarehouseToHome,
 case when WarehouseToHome <= 5 then 'Very Close Distance'
@@ -274,13 +277,14 @@ as Comment_Distance
      from customer_churn;
 ```
 
-**Analysis No.17 :-**    
+**Analysis No.17 :-** Customer’s order details under some conditions. 
+
 ```sql
- Select  CustomerID,PreferredOrderCat,OrderAmountHikeFromlastYear,DaySinceLastOrder,CityTier,MaritalStatus,OrderCount
- from customer_churn
- group by  CustomerID
-    having MaritalStatus='Married' 
-    and CityTier = 1 and OrderCount > (select avg(OrderCount) from customer_churn);-- 2.5533;
+Select  CustomerID,PreferredOrderCat,OrderAmountHikeFromlastYear,DaySinceLastOrder,CityTier,MaritalStatus,OrderCount
+from customer_churn
+group by  CustomerID
+having MaritalStatus='Married' 
+and CityTier = 1 and OrderCount > (select avg(OrderCount) from customer_churn);-- 2.5533;
 ```
 
 Create table customer_returns( ReturnID  INT PRIMARY KEY,CustomerID INT, 
