@@ -4,7 +4,8 @@ select * from customer_churn;
 
 
 
-![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/First.png)
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/First.png)
+
 
 set sql_safe_updates = 0;
 
