@@ -145,7 +145,7 @@ select avg(Tenure),sum(CashbackAmount) as Total_Cashback,count(CashbackAmount) a
 from customer_churn
 where churnStatus = 'Churned';
 ```
-![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/Count.png)
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/count.png)
 
 
 ```sql 
@@ -174,7 +174,7 @@ where churnStatus = 'Churned' and PreferredOrderCat='Laptop & Accessory'
 Select sum(OrderAmountHikeFromlastYear) as Total_Order_Amount_Hike from customer_churn
 where MaritalStatus='Single' and PreferredOrderCat='Mobile Phone';
 ```
-![Result](https://github.com/Abruz-plotz/SQL-Business-analysis/blob/main/Screenshots%20for%20GithubSQL/Ans_6.png)
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Ans_6.png)
 
 ##### Analysis No:- 7
 
