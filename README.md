@@ -136,17 +136,25 @@ select * from customer_churn;
 ### Data Exploration and Analysis
   <!-- -- Question D -->
 
+**Analysis No.2 :-** count of churned and active customers from the dataset.
+
 ```sql 
 select  sum(case when churnStatus = 'Churned' then 1 else 0 end) as Count_of_Churned,
 		 sum(case when churnStatus = 'Active' then 1 else 0 end) as Count_of_Active 
 from customer_churn;
+```
+![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Count.png)
 
+**Analysis No.2 :-** Average tenure and total cashback amount of customers who churned.
+
+```sql
 select avg(Tenure),sum(CashbackAmount) as Total_Cashback,count(CashbackAmount) as Number_of_customers
 from customer_churn
 where churnStatus = 'Churned';
 ```
-![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/count.png)
 
+
+**Analysis No.3 :-** The percentage of churned customers who complained.
 
 ```sql 
 Select 
@@ -155,6 +163,7 @@ where churnStatus = 'Churned' and ComplaintReceived = 'Yes') as DECIMAL(10, 2)) 
 (select count(*) from customer_churn
 where churnStatus = 'Churned') as Percentage_of_Churned_Customers_complained;
 ```
+
 **Analysis No.4 :-** City tier with the highest number of churned customers whose preferred order category is "Laptop & Accessory".
 
 ```sql
@@ -183,67 +192,96 @@ where MaritalStatus='Single' and PreferredOrderCat='Mobile Phone';
 ```
 ![Result](https://raw.githubusercontent.com/Abruz-plotz/SQL-Business-analysis/main/Screenshots%20for%20GithubSQL/Ans_6.png)
 
-##### Analysis No:- 7
+**Analysis No.7 :-** Average number of devices registered among customers who used UPI as their preferred payment mode.
 
 ```sql  
 Select avg(NumberOfDeviceRegistered) from customer_churn
 where PreferredPaymentMode = 'UPI';
 ```  
-  Select CityTier,
-    COUNT(CustomerID) as Customer_count from customer_churn
-     GROUP BY CityTier
-     ORDER BY Customer_count DESC limit 1;
-     
-  Select Gender, 
-  sum(CouponUsed) as Utilized_coupon_count from customer_churn
-  group by Gender
-  ORDER BY Utilized_coupon_count DESC limit 1;
-  
-  Select PreferredOrderCat,count(CustomerID) as No_of_Customers,
+ **Analysis No.8 :-** 
+
+```sql 
+Select CityTier,
+COUNT(CustomerID) as Customer_count from customer_churn
+GROUP BY CityTier
+ORDER BY Customer_count DESC limit 1;
+```
+
+**Analysis No.9 :-**    
+```sql
+Select Gender, 
+sum(CouponUsed) as Utilized_coupon_count from customer_churn
+group by Gender
+ORDER BY Utilized_coupon_count DESC limit 1;
+``` 
+ 
+**Analysis No.10 :-**  
+```sql
+Select PreferredOrderCat,count(CustomerID) as No_of_Customers,
          Sum(HoursSpentOnApp) as Max_hours_Spent from customer_churn
           group by PreferredOrderCat
           order by PreferredOrderCat,No_of_Customers,Max_hours_Spent;
-          
-	Select Sum(OrderCount) as Total_Order_Count,count(OrderCount) as No_Of_Customers from customer_churn
+``` 
+
+**Analysis No.11 :-**         
+```sql
+Select Sum(OrderCount) as Total_Order_Count,count(OrderCount) as No_Of_Customers from customer_churn
     where PreferredPaymentMode = 'Credit Card' 
     and SatisfactionScore =(Select max(SatisfactionScore) from customer_churn);
-    
-    Select avg(SatisfactionScore) as Average_Satisfaction_Score
+ ``` 
+**Analysis No.12 :-**   
+ ```sql   
+	Select avg(SatisfactionScore) as Average_Satisfaction_Score
     from customer_churn where ComplaintReceived = 'Yes';
-    
-    Select CustomerID,PreferredOrderCat,CouponUsed from  customer_churn
+ ``` 
+
+**Analysis No.13 :-**  
+```sql
+Select CustomerID,PreferredOrderCat,CouponUsed from  customer_churn
     where CouponUsed > 5; 
-  
-  Select PreferredOrderCat as Top_3_category,(select avg(CashbackAmount)) as Average_Cashback from customer_churn
+```
+
+**Analysis No.14 :-** 
+```sql
+Select PreferredOrderCat as Top_3_category,(select avg(CashbackAmount)) as Average_Cashback from customer_churn
   group by PreferredOrderCat
   order by Average_Cashback DESC limit 3;
-  
+ ``` 
  /* select CustomerID from customer_churn
   group by CustomerID
   having sum(OrderCount) > 500; */
   
   
-    
+ 
+**Analysis No.15 :-**   
+ ```sql
  Select PreferredPaymentMode
         from customer_churn
   group by  PreferredPaymentMode
     having avg(Tenure) > 10
 	   and sum(OrderCount) > 500;        
-    
+ ```
+  
+**Analysis No.16 :-**   
+```sql
 Select  CustomerID,WarehouseToHome,
 case when WarehouseToHome <= 5 then 'Very Close Distance'
-     when WarehouseToHome > 5 and WarehouseToHome <= 10 then 'Close Distance'
-     when WarehouseToHome > 10 and WarehouseToHome <= 15 then 'Moderate Distance'
-	 when WarehouseToHome > 15 then 'Far Distance'
-     end
-     as Comment_Distance
+when WarehouseToHome > 5 and WarehouseToHome <= 10 then 'Close Distance'
+when WarehouseToHome > 10 and WarehouseToHome <= 15 then 'Moderate Distance'
+when WarehouseToHome > 15 then 'Far Distance'
+end
+as Comment_Distance
      from customer_churn;
-     
-    Select  CustomerID,PreferredOrderCat,OrderAmountHikeFromlastYear,DaySinceLastOrder,CityTier,MaritalStatus,OrderCount
-    from customer_churn
-    group by  CustomerID
+```
+
+**Analysis No.17 :-**    
+```sql
+ Select  CustomerID,PreferredOrderCat,OrderAmountHikeFromlastYear,DaySinceLastOrder,CityTier,MaritalStatus,OrderCount
+ from customer_churn
+ group by  CustomerID
     having MaritalStatus='Married' 
     and CityTier = 1 and OrderCount > (select avg(OrderCount) from customer_churn);-- 2.5533;
+```
 
 Create table customer_returns( ReturnID  INT PRIMARY KEY,CustomerID INT, 
                               ReturnDate date, RefundAmount int);
