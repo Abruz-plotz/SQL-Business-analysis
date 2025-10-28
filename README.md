@@ -1,4 +1,7 @@
-# SQL Project
+# SQL Project :- E-Commerce Customer Churn Analysis
+
+## Inroduction :- 
+This project deals with E-Commerce Customer Churn Analysis and find insights on how this works 
 
 ## Dataset
 
